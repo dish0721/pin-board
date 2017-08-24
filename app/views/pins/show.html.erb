@@ -1,0 +1,58 @@
+<div id="pin_show" class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="panel panel-default">
+			<div class="panel-heading pin_image">
+				<%=image_tag @pin.image.url(:medium)%>
+			</div>
+			<div class="panel-body">
+				<h1>
+					<%=@pin.title%>
+				</h1>
+				<p class="description">
+					<%=@pin.description%>
+				</p>
+				Submitted By:
+				<%=@pin.user.email%>
+				<br>
+			</div>
+			<div class="panel-footer">
+				<div class="row">
+					<div class="col-md-6 ">
+						<p class="user">
+							Submitted By:
+							<%=@pin.user.email%>
+						</p>
+						<div class="col-md-6 ">
+							<div class="btn-group pull-right">
+							<button type="btn-btn default">
+								<%=link_to "Edit",edit_pin_path%>
+							</button>
+							<button type="btn-btn default">
+								<%=link_to "Delete",pin_path, method: :delete , data: { confirm: "Are you sure?" }%>
+								</button>
+							<button type="btn-btn default">
+							<%=link_to like_pin_path(@pin),method: :put  do%>
+								<span class="glyphicon glyphicon-heart">
+									<%=@pin.get_upvotes.size%>
+									<%end%>
+									
+								</span>
+
+								
+								
+							</button>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+
+</div>
+
+
+
