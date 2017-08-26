@@ -24,24 +24,27 @@
 						</p>
 						<div class="col-md-6 ">
 							<div class="btn-group pull-right">
-							<button type="btn-btn default">
-								<%=link_to "Edit",edit_pin_path%>
-							</button>
-							<button type="btn-btn default">
-								<%=link_to "Delete",pin_path, method: :delete , data: { confirm: "Are you sure?" }%>
-								</button>
-							<button type="btn-btn default">
-							<%=link_to like_pin_path(@pin),method: :put  do%>
-								<span class="glyphicon glyphicon-heart">
-									<%=@pin.get_upvotes.size%>
-									<%end%>
-									
-								</span>
 
-								
-								
-							</button>
-							</div>
+								<button type="btn-btn default">
+									<%=link_to like_pin_path(@pin),method: :put  do%>
+										<span class="glyphicon glyphicon-heart">
+											<%=@pin.get_upvotes.size%>
+										<%end%>
+										
+									</span>
+	
+								</button>
+
+								<% if user_signed_in? %>
+									<button type="btn-btn default">
+										<%=link_to "Edit",edit_pin_path%>
+									</button>
+									<button type="btn-btn default">
+											<%=link_to "Delete",pin_path, method: :delete , data: { confirm: "Are you sure?" }%>
+										</button>
+								<%end%>
+									
+								</div>
 						</div>
 						
 					</div>
