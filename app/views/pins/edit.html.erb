@@ -1,4 +1,13 @@
-<div class="col-md-6 col-md-offset-3">
+<h1>
+	Edit pin
+</h1>
+<%=image_tag @pin.image.url(:medium )%>
+<%= render 'form'%>
+<%= link_to "Cancel", pin_path%>
+
+
+
+<!-- <div class="col-md-6 col-md-offset-3">
 	<div class="row">
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -13,7 +22,7 @@
 		    </div>
 		    </div>
 	</div>		
-</div>
+</div> -->
 
 
 
